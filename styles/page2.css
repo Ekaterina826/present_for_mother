@@ -324,3 +324,97 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Общие адаптивные стили */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .side-gallery {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .side-gallery.left img {
+    transform: rotate(-5deg);
+  }
+
+  .side-gallery.right img {
+    transform: rotate(5deg);
+  }
+
+  .side-gallery img:first-child {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  p,
+  .text p,
+  .congratulation p {
+    font-size: 16px;
+  }
+
+  .gallery img {
+    max-width: 90%;
+  }
+
+  .images {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .images img {
+    position: static;
+    transform: none !important;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+  }
+
+  .circle-container {
+    width: 100vw;
+    height: 100vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .circle-container .photo {
+    width: 15vw !important;
+    height: 15vw !important;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: -7.5vw !important;
+    margin-top: -7.5vw !important;
+  }
+
+  .circle-container .photo:nth-child(n) {
+    transform: rotate(calc(36deg * (n - 1))) translate(40vw)
+      rotate(calc(-36deg * (n - 1))) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .side-gallery img {
+    width: 120px;
+  }
+
+  .youth,
+  .childhood,
+  .molodost,
+  .congratulation {
+    padding: 20px 10px;
+  }
+}
