@@ -284,73 +284,6 @@ p {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Адаптация для мобильных */
-@media (max-width: 1200px) {
-  .circle-container {
-    width: 90vw;
-    height: 90vw;
-    max-width: 800px;
-    max-height: 800px;
-  }
-  .circle-container .photo {
-    width: 20vw !important;
-    height: 20vw !important;
-    max-width: 180px;
-    max-height: 180px;
-    margin-left: -10vw !important;
-    margin-top: -10vw !important;
-  }
-  /* Обновляем позиции */
-  .circle-container .photo:nth-child(n) {
-    transform: rotate(calc(36deg * (n - 1))) translate(45vw)
-      rotate(calc(-36deg * (n - 1))) !important;
-  }
-}
-
-.congratulation {
-  background-color: #f1e8e5;
-  font-family: "Georgia", serif;
-  text-align: center;
-  padding: 40px 20px;
-  color: #b82a2a;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.congratulation p {
-  font-size: 25px;
-  margin-bottom: 10px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Общие адаптивные стили */
-@media (max-width: 1200px) {
-  .container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .side-gallery {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .side-gallery.left img {
-    transform: rotate(-5deg);
-  }
-
-  .side-gallery.right img {
-    transform: rotate(5deg);
-  }
-
-  .side-gallery img:first-child {
-    margin-top: 0;
-  }
-}
-
 @media (max-width: 768px) {
   h1 {
     font-size: 24px;
@@ -358,17 +291,49 @@ p {
 
   p,
   .text p,
-  .congratulation p {
+  .quote {
     font-size: 16px;
+    padding: 10px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
   }
 
   .gallery img {
     max-width: 90%;
+    margin: 10px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .side-gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .side-gallery img {
+    width: 45%;
+    max-width: 120px;
+    transform: none !important; /* убрать наклоны для мобильной версии */
+  }
+
+  .side-gallery img:first-child {
+    margin-top: 0;
   }
 
   .images {
-    flex-wrap: wrap;
     height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .images img {
@@ -376,45 +341,29 @@ p {
     transform: none !important;
     width: 120px;
     height: 120px;
-    margin: 10px;
+    margin: 5px;
   }
 
   .circle-container {
-    width: 100vw;
-    height: 100vw;
-    max-width: 500px;
-    max-height: 500px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .circle-container .photo {
-    width: 15vw !important;
-    height: 15vw !important;
-    max-width: 100px;
-    max-height: 100px;
-    margin-left: -7.5vw !important;
-    margin-top: -7.5vw !important;
+    position: static !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
-  .circle-container .photo:nth-child(n) {
-    transform: rotate(calc(36deg * (n - 1))) translate(40vw)
-      rotate(calc(-36deg * (n - 1))) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .quote {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .side-gallery img {
-    width: 120px;
-  }
-
-  .youth,
-  .childhood,
-  .molodost,
-  .congratulation {
-    padding: 20px 10px;
+  .circle-container .photo:hover {
+    width: 140px !important;
+    height: 140px !important;
+    margin: 0 !important;
   }
 }
