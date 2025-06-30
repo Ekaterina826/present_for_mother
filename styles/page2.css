@@ -367,3 +367,12 @@ p {
     margin: 0 !important;
   }
 }
+.congratulation {
+  font-size: 23px;
+  margin-bottom: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #b82a2a;
+  font-weight: medium;
+}
